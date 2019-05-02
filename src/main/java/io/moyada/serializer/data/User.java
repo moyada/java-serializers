@@ -19,7 +19,8 @@ public class User implements Serializable {
     private String name;
     private int age;
     private boolean sex;
-    private double scope;
+    private Double scope;
     private List<String> identifies;
     private Map<String, String> info;
+//    private Timestamp birthDay
 }

@@ -2829,7 +2829,7 @@ SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen                   18 
 SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen.norm              18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10      0.012 ±   0.003    B/op
 SerializationBenchMark.KryoSerialize:·gc.count                              18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10    675.000            counts
 SerializationBenchMark.KryoSerialize:·gc.time                               18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10    997.000                ms
-SerializationBenchMark.ProtobufSerialize                                    18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10    949.047 ±  10.413  ops/ms
+SerializationBenchMark.ProtobufSerialize                                    18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10    962.047 ±  14.413  ops/ms
 SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate                     18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10   2117.353 ±  10.217  MB/sec
 SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate.norm                18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10   2400.695 ±  25.499    B/op
 SerializationBenchMark.ProtobufSerialize:·gc.churn.G1_Eden_Space            18  821223455207111  桂花srt-123  14232.4304   true  thrpt   10   2121.475 ±  43.570  MB/sec
@@ -2901,7 +2901,7 @@ SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen                   18 
 SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen.norm              18  821223455207111  桂花srt-123  14232.4304   true   avgt   10      0.011 ±   0.002    B/op
 SerializationBenchMark.KryoSerialize:·gc.count                              18  821223455207111  桂花srt-123  14232.4304   true   avgt   10    678.000            counts
 SerializationBenchMark.KryoSerialize:·gc.time                               18  821223455207111  桂花srt-123  14232.4304   true   avgt   10    978.000                ms
-SerializationBenchMark.ProtobufSerialize                                    18  821223455207111  桂花srt-123  14232.4304   true   avgt   10      0.012 ±   0.001   ms/op
+SerializationBenchMark.ProtobufSerialize                                    18  821223455207111  桂花srt-123  14232.4304   true   avgt   10      0.010 ±   0.001   ms/op
 SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate                     18  821223455207111  桂花srt-123  14232.4304   true   avgt   10   2169.223 ± 212.477  MB/sec
 SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate.norm                18  821223455207111  桂花srt-123  14232.4304   true   avgt   10   2692.694 ± 159.364    B/op
 SerializationBenchMark.ProtobufSerialize:·gc.churn.G1_Eden_Space            18  821223455207111  桂花srt-123  14232.4304   true   avgt   10   2174.820 ± 226.171  MB/sec

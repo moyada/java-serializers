@@ -2,7 +2,6 @@ package io.moyada.serializer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.moyada.serializer.data.User;
 
 import java.io.IOException;
 

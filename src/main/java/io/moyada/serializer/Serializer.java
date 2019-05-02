@@ -4,9 +4,9 @@ package io.moyada.serializer;
  * @author xueyikang
  * @since 1.0
  **/
-public interface Serializer<D> {
+public interface Serializer<C, D> {
 
-    <T> D serialize(T obj);
+    <T extends C> D serialize(T obj);
 
-    <T> T deserialize(D data, Class<T> clazz);
+    <T extends C> T deserialize(D data, Class<T> clazz);
 }

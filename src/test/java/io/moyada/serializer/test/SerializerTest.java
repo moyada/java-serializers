@@ -5,8 +5,11 @@ import io.moyada.serializer.*;
 import io.moyada.serializer.data.avro.User;
 import io.moyada.serializer.data.proto.UserProto;
 import io.moyada.serializer.data.thrift.SharedStruct;
+import io.moyada.serializer.utils.ClassUtil;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +18,12 @@ import java.util.Map;
  * @since 1.0
  **/
 public class SerializerTest {
+
+    private Calendar calendar = Calendar.getInstance();
+
+    public SerializerTest() {
+        calendar.set(1991, Calendar.DECEMBER, 29, 12, 0);
+    }
 
     @Test
     public void JacksonTest() {
@@ -48,6 +57,7 @@ public class SerializerTest {
 
     @Test
     public void ProtobuffTest() {
+//        Timestamp.newBuilder().setSeconds(TimeUnit.MILLISECONDS.toSeconds(calendar.getTimeInMillis()));
         UserProto.User user = UserProto.User.newBuilder()
                 .setId(14323532L)
                 .setName("haah")
@@ -56,12 +66,13 @@ public class SerializerTest {
                 .addAllIdentifies(Lists.newArrayList("moyada", "people", "person", "animal"))
                 .putInfo("haha", "666")
                 .putInfo("test", "111")
+//                .setBirthDay(Timestamp.getDefaultInstance())
                 .build();
 
         test(new ProtobufSerializer(), user);
     }
 
-    @Test
+//    @Test
     public void ThriftTest() {
         SharedStruct test = new SharedStruct().setKey(23).setValue("test");
         test(new ThriftSerializer(), test);
@@ -86,7 +97,7 @@ public class SerializerTest {
         test(new AvroSerializer(), user);
     }
 
-    private <T> void test(Serializer<T> serializer) {
+    private <T> void test(Serializer<Object, T> serializer) {
         Map<String, String> info = new HashMap<>();
         info.put("haha", "666");
         info.put("test", "111");
@@ -102,7 +113,9 @@ public class SerializerTest {
         test(serializer, user);
     }
 
-    private <T> void test(Serializer<T> serializer, Object value) {
+    private <C, T> void test(Serializer<C, T> serializer, C value) {
+        System.out.print(serializer.getClass().getSimpleName() + "  ");
+
         T data = serializer.serialize(value);
 
         if (data instanceof byte[]) {
@@ -111,7 +124,9 @@ public class SerializerTest {
             System.out.println(String.valueOf(data).getBytes().length);
         }
 
-        Object obj = serializer.deserialize(data, value.getClass());
-        System.out.println(obj);
+        C obj = serializer.deserialize(data, ClassUtil.getClass(value));
+
+        System.out.println(value);
+        Assertions.assertEquals(value, obj);
     }
 }

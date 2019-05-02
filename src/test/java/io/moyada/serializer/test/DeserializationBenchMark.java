@@ -48,7 +48,7 @@ public class DeserializationBenchMark {
     private boolean sex;
 
     private ByteArraySerializer fastJsonSerializer;
-    private ByteArraySerializer protobufSerializer;
+    private ProtobufSerializer protobufSerializer;
     private ByteArraySerializer protostuffSerializer;
     private ByteArraySerializer kryoSerializer;
     private ByteArraySerializer hessianSerializer;
@@ -184,9 +184,5 @@ public class DeserializationBenchMark {
         map.put("rank", Integer.toString(ThreadLocalRandom.current().nextInt(100)));
         map.put("time", Long.toString(System.currentTimeMillis()));
         return map;
-    }
-
-    private <T> void serialize(Serializer<T> serializer, Object value) {
-        serializer.serialize(value);
     }
 }

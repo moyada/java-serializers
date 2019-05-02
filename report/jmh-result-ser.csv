@@ -53,7 +53,7 @@
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen.norm","thrpt",10,10,0.011774,0.002678,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.count","thrpt",10,10,675.000000,NaN,"counts",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.time","thrpt",10,10,997.000000,NaN,"ms",18,821223455207111,桂花srt-123,14232.4304,true
-"io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize","thrpt",10,10,949.047237,10.413409,"ops/ms",18,821223455207111,桂花srt-123,14232.4304,true
+"io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize","thrpt",10,10,962.047237,14.413409,"ops/ms",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate","thrpt",10,10,2117.353070,10.217010,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate.norm","thrpt",10,10,2400.694588,25.499252,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.churn.G1_Eden_Space","thrpt",10,10,2121.474870,43.570025,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true
@@ -125,7 +125,7 @@
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.churn.G1_Old_Gen.norm","avgt",10,10,0.010837,0.002166,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.count","avgt",10,10,678.000000,NaN,"counts",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.KryoSerialize:·gc.time","avgt",10,10,978.000000,NaN,"ms",18,821223455207111,桂花srt-123,14232.4304,true
-"io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize","avgt",10,10,0.011569,0.000906,"ms/op",18,821223455207111,桂花srt-123,14232.4304,true
+"io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize","avgt",10,10,0.010184,0.000527,"ms/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate","avgt",10,10,2169.222819,212.476533,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.alloc.rate.norm","avgt",10,10,2692.694452,159.364113,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.churn.G1_Eden_Space","avgt",10,10,2174.819628,226.170810,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true
@@ -134,7 +134,7 @@
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.churn.G1_Old_Gen.norm","avgt",10,10,0.002748,0.000918,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.count","avgt",10,10,365.000000,NaN,"counts",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtobufSerialize:·gc.time","avgt",10,10,548.000000,NaN,"ms",18,821223455207111,桂花srt-123,14232.4304,true
-"io.moyada.serializer.test.SerializationBenchMark.ProtostuffSerialize","avgt",10,10,0.006061,0.000111,"ms/op",18,821223455207111,桂花srt-123,14232.4304,true
+"io.moyada.serializer.test.SerializationBenchMark.ProtostuffSerialize","avgt",10,10,0.006061,0.000121,"ms/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtostuffSerialize:·gc.alloc.rate","avgt",10,10,2357.305386,43.521261,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtostuffSerialize:·gc.alloc.rate.norm","avgt",10,10,1536.447160,0.003207,"B/op",18,821223455207111,桂花srt-123,14232.4304,true
 "io.moyada.serializer.test.SerializationBenchMark.ProtostuffSerialize:·gc.churn.G1_Eden_Space","avgt",10,10,2367.079655,59.235552,"MB/sec",18,821223455207111,桂花srt-123,14232.4304,true

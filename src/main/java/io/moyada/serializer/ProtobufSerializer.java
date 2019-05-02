@@ -7,33 +7,17 @@ import com.google.protobuf.Parser;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
  * @author xueyikang
  * @since 1.0
  **/
-public class ProtobufSerializer implements ByteArraySerializer {
-
-    private final Set<Class<?>> protos;
+public class ProtobufSerializer implements GenericByteArraySerializer<MessageLite> {
 
     private final Map<Class<?>, Parser<?>> parserMap;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(protos, parserMap);
-    }
-
     public ProtobufSerializer() {
-        protos = new ConcurrentSkipListSet<>((c1, c2) -> {
-            if (c1 == c2) {
-                return 0;
-            }
-            return Objects.hash(c1, c2);
-        });
         parserMap = new ConcurrentHashMap<>(32);
     }
 
@@ -61,23 +45,12 @@ public class ProtobufSerializer implements ByteArraySerializer {
     }
 
     @Override
-    public <T> byte[] serialize(T obj) {
-        Class<?> clazz = obj.getClass();
-        if (protos.contains(clazz)) {
-            return ((MessageLite) obj).toByteArray();
-        }
-        if (!(obj instanceof MessageLite)) {
-            return null;
-        }
-//        if (!ClassUtil.isSubClass(clazz, MessageLite.class)) {
-//            return null;
-//        }
-        protos.add(clazz);
-        return ((MessageLite) obj).toByteArray();
+    public <T extends MessageLite> byte[] serialize(T obj) {
+        return obj.toByteArray();
     }
 
     @Override
-    public <T> T deserialize(byte[] data, Class<T> clazz) {
+    public <T extends MessageLite> T deserialize(byte[] data, Class<T> clazz) {
         Parser<T> parser = getParser(clazz);
         if (null == parser) {
             return null;

@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package io.moyada.serializer.data.proto;
 
 option java_outer_classname = "UserProto";
@@ -12,5 +14,5 @@ message User {
   double scope = 5;
   repeated string identifies = 6;
   map<string, string> info = 7;
-  bytes data = 8;
+  google.protobuf.Timestamp birthDay = 8;
 }

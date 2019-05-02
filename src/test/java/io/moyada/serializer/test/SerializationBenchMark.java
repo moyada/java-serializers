@@ -48,7 +48,7 @@ public class SerializationBenchMark {
     private boolean sex;
 
     private ByteArraySerializer fastJsonSerializer;
-    private ByteArraySerializer protobufSerializer;
+    private ProtobufSerializer protobufSerializer;
     private ByteArraySerializer protostuffSerializer;
     private ByteArraySerializer kryoSerializer;
     private ByteArraySerializer hessianSerializer;
