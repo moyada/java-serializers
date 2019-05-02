@@ -1,0 +1,13 @@
+{"namespace": "io.moyada.serializer.data.avro",
+ "type": "record",
+ "name": "User",
+ "fields": [
+     {"name": "id", "type": "long"},
+     {"name": "name", "type": ["string", "null"]},
+     {"name": "age",  "type": "int"},
+     {"name": "sex", "type": ["boolean", "null"]},
+     {"name": "scope", "type": ["double", "null"]},
+     {"name": "identifies", "type": { "type": "array", "items": "string"}},
+     {"name": "info", "type": {"type": "map", "values": "string"}}
+ ]
+}
