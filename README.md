@@ -2,7 +2,7 @@ Serialization Framework Performance Test
 
 java version "1.8.0_191"
 
-See Detail: https://moyada.github.io/2019/05/02/serializer/
+See Detail: https://moyada.github.io/2019/05/03/serializer/
 
 # Serialize Time
 
