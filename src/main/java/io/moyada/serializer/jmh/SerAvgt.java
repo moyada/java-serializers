@@ -1,16 +1,12 @@
-package io.moyada.serializer.test;
+package io.moyada.serializer.jmh;
 
 import avro.shaded.com.google.common.collect.Lists;
 import io.moyada.serializer.*;
 import io.moyada.serializer.data.User;
 import io.moyada.serializer.data.proto.UserProto;
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.profile.GCProfiler;
-import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,13 +20,12 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 2, jvmArgs = {"-server", "-Xms2048m", "-Xmx2048m", "-XX:+UseTLAB", "-XX:+UseG1GC"})
 @State(Scope.Benchmark)
 @Threads(10)
-@Measurement(time = 20, iterations = 5)
-@Warmup(time = 20, iterations = 3)
+@Measurement(time = 60, iterations = 5)
+@Warmup(time = 40, iterations = 3)
 //@CompilerControl(CompilerControl.Mode.INLINE)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
-@BenchmarkMode({Mode.AverageTime, Mode.Throughput})
-@Timeout(time = 30)
-public class SerializationBenchMark {
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
+@BenchmarkMode({Mode.AverageTime})
+public class SerAvgt extends AbstractBenchMark {
 
     @Param({"821223455207111"})
     private long id;
@@ -57,15 +52,7 @@ public class SerializationBenchMark {
     private StringSerializer gsonSerializer;
 
     public static void main(String[] args) throws RunnerException {
-        Options opt = new OptionsBuilder()
-                .include(SerializationBenchMark.class.getSimpleName())
-                .jvmArgs("-server", "-Xms2048m", "-Xmx2048m", "-XX:+UseTLAB", "-XX:+UseG1GC")
-                .addProfiler(GCProfiler.class)
-                .resultFormat(ResultFormatType.CSV)
-                .output("/Users/xueyikang/JavaProjects/java-serializers/serializers.csv")
-                .build();
-
-        new Runner(opt).run();
+        new Runner(getOptional(SerAvgt.class.getSimpleName())).run();
     }
 
     @Setup

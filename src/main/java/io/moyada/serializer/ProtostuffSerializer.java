@@ -38,10 +38,9 @@ public class ProtostuffSerializer implements ByteArraySerializer {
 
     @Override
     public <T> T deserialize(byte[] data, Class<T> clazz) {
-        T message = objenesis.newInstance(clazz);
-        Schema<T> schema = RuntimeSchema.getSchema(clazz);
-
         try {
+            T message = objenesis.newInstance(clazz);
+            Schema<T> schema = RuntimeSchema.getSchema(clazz);
             ProtostuffIOUtil.mergeFrom(data, message, schema);
             return message;
         } catch (Exception e) {
