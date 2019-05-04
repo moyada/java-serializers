@@ -62,7 +62,7 @@ public class SerializerTest {
                 .setId(14323532L)
                 .setName("haah")
                 .setAge(23)
-                .setSex(true)
+                .setGender(true)
                 .addAllIdentifies(Lists.newArrayList("moyada", "people", "person", "animal"))
                 .putInfo("haha", "666")
                 .putInfo("test", "111")
@@ -88,7 +88,7 @@ public class SerializerTest {
                 .setId(34501231422L)
                 .setName("moyada")
                 .setAge(18)
-                .setSex(true)
+                .setGender(true)
                 .setScope(33.23)
                 .setIdentifies(Lists.newArrayList("moyada", "people", "person", "animal"))
                 .setInfo(info)
@@ -106,7 +106,7 @@ public class SerializerTest {
         user.setId(34501231422L);
         user.setName("moyada");
         user.setAge(18);
-        user.setSex(true);
+        user.setGender(true);
         user.setIdentifies(Lists.newArrayList("moyada", "people", "person", "animal"));
         user.setInfo(info);
 
