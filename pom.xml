@@ -94,25 +94,25 @@
                 </executions>
             </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>com.github.os72</groupId>-->
-                <!--<artifactId>protoc-jar-maven-plugin</artifactId>-->
-                <!--<version>3.7.0.2</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>generate-sources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>run</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>-->
-                            <!--<inputDirectories>-->
-                                <!--<include>${project.basedir}/src/main/resources/</include>-->
-                            <!--</inputDirectories>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>com.github.os72</groupId>
+                <artifactId>protoc-jar-maven-plugin</artifactId>
+                <version>3.7.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <inputDirectories>
+                                <include>${project.basedir}/src/main/resources/</include>
+                            </inputDirectories>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <!--<plugin>-->
                 <!--<groupId>org.apache.thrift.tools</groupId>-->

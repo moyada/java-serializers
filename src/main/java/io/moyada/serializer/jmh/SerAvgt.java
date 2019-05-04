@@ -79,7 +79,7 @@ public class SerAvgt extends AbstractBenchMark {
                 .setId(id)
                 .setName(name)
                 .setAge(age)
-                .setSex(sex)
+                .setGender(sex)
                 .setScope(ThreadLocalRandom.current().nextDouble())
                 .setIdentifies(Lists.newArrayList("豆腐干", "@moyada", "people", "person", "animal", "test-"))
                 .setInfo(map)
@@ -94,7 +94,7 @@ public class SerAvgt extends AbstractBenchMark {
                 .setId(id)
                 .setName(name)
                 .setAge(age)
-                .setSex(sex)
+                .setGender(sex)
                 .setScope(ThreadLocalRandom.current().nextDouble())
                 .addAllIdentifies(Lists.newArrayList("豆腐干", "@moyada", "people", "person", "animal", "test-"))
                 .putAllInfo(getInfo())
@@ -138,7 +138,7 @@ public class SerAvgt extends AbstractBenchMark {
         user.setId(id);
         user.setName(name);
         user.setAge(age);
-        user.setSex(sex);
+        user.setGender(sex);
         user.setScope(ThreadLocalRandom.current().nextDouble());
         user.setIdentifies(Lists.newArrayList( "豆腐干", "moyada", "people", "person", "animal", "test"));
         user.setInfo(getInfo());

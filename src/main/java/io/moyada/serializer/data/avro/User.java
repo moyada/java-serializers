@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3012351710552415868L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"io.moyada.serializer.data.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":[\"string\",\"null\"]},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"sex\",\"type\":[\"boolean\",\"null\"]},{\"name\":\"scope\",\"type\":[\"double\",\"null\"]},{\"name\":\"identifies\",\"type\":{\"type\":\"array\",\"items\":\"string\"}},{\"name\":\"info\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}");
+  private static final long serialVersionUID = -1826676517528916163L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"io.moyada.serializer.data.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":[\"string\",\"null\"]},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":[\"boolean\",\"null\"]},{\"name\":\"scope\",\"type\":[\"double\",\"null\"]},{\"name\":\"identifies\",\"type\":{\"type\":\"array\",\"items\":\"string\"}},{\"name\":\"info\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,7 +54,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public long id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public int age;
-  @Deprecated public java.lang.Boolean sex;
+  @Deprecated public java.lang.Boolean gender;
   @Deprecated public java.lang.Double scope;
   @Deprecated public java.util.List<java.lang.CharSequence> identifies;
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> info;
@@ -71,16 +71,16 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * @param id The new value for id
    * @param name The new value for name
    * @param age The new value for age
-   * @param sex The new value for sex
+   * @param gender The new value for gender
    * @param scope The new value for scope
    * @param identifies The new value for identifies
    * @param info The new value for info
    */
-  public User(java.lang.Long id, java.lang.CharSequence name, java.lang.Integer age, java.lang.Boolean sex, java.lang.Double scope, java.util.List<java.lang.CharSequence> identifies, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> info) {
+  public User(java.lang.Long id, java.lang.CharSequence name, java.lang.Integer age, java.lang.Boolean gender, java.lang.Double scope, java.util.List<java.lang.CharSequence> identifies, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> info) {
     this.id = id;
     this.name = name;
     this.age = age;
-    this.sex = sex;
+    this.gender = gender;
     this.scope = scope;
     this.identifies = identifies;
     this.info = info;
@@ -93,7 +93,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: return id;
     case 1: return name;
     case 2: return age;
-    case 3: return sex;
+    case 3: return gender;
     case 4: return scope;
     case 5: return identifies;
     case 6: return info;
@@ -108,7 +108,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: id = (java.lang.Long)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: age = (java.lang.Integer)value$; break;
-    case 3: sex = (java.lang.Boolean)value$; break;
+    case 3: gender = (java.lang.Boolean)value$; break;
     case 4: scope = (java.lang.Double)value$; break;
     case 5: identifies = (java.util.List<java.lang.CharSequence>)value$; break;
     case 6: info = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
@@ -165,19 +165,19 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
-   * Gets the value of the 'sex' field.
-   * @return The value of the 'sex' field.
+   * Gets the value of the 'gender' field.
+   * @return The value of the 'gender' field.
    */
-  public java.lang.Boolean getSex() {
-    return sex;
+  public java.lang.Boolean getGender() {
+    return gender;
   }
 
   /**
-   * Sets the value of the 'sex' field.
+   * Sets the value of the 'gender' field.
    * @param value the value to set.
    */
-  public void setSex(java.lang.Boolean value) {
-    this.sex = value;
+  public void setGender(java.lang.Boolean value) {
+    this.gender = value;
   }
 
   /**
@@ -263,7 +263,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     private long id;
     private java.lang.CharSequence name;
     private int age;
-    private java.lang.Boolean sex;
+    private java.lang.Boolean gender;
     private java.lang.Double scope;
     private java.util.List<java.lang.CharSequence> identifies;
     private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> info;
@@ -291,8 +291,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.age = data().deepCopy(fields()[2].schema(), other.age);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.sex)) {
-        this.sex = data().deepCopy(fields()[3].schema(), other.sex);
+      if (isValidValue(fields()[3], other.gender)) {
+        this.gender = data().deepCopy(fields()[3].schema(), other.gender);
         fieldSetFlags()[3] = true;
       }
       if (isValidValue(fields()[4], other.scope)) {
@@ -327,8 +327,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.age = data().deepCopy(fields()[2].schema(), other.age);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.sex)) {
-        this.sex = data().deepCopy(fields()[3].schema(), other.sex);
+      if (isValidValue(fields()[3], other.gender)) {
+        this.gender = data().deepCopy(fields()[3].schema(), other.gender);
         fieldSetFlags()[3] = true;
       }
       if (isValidValue(fields()[4], other.scope)) {
@@ -461,40 +461,40 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /**
-      * Gets the value of the 'sex' field.
+      * Gets the value of the 'gender' field.
       * @return The value.
       */
-    public java.lang.Boolean getSex() {
-      return sex;
+    public java.lang.Boolean getGender() {
+      return gender;
     }
 
     /**
-      * Sets the value of the 'sex' field.
-      * @param value The value of 'sex'.
+      * Sets the value of the 'gender' field.
+      * @param value The value of 'gender'.
       * @return This builder.
       */
-    public io.moyada.serializer.data.avro.User.Builder setSex(java.lang.Boolean value) {
+    public io.moyada.serializer.data.avro.User.Builder setGender(java.lang.Boolean value) {
       validate(fields()[3], value);
-      this.sex = value;
+      this.gender = value;
       fieldSetFlags()[3] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'sex' field has been set.
-      * @return True if the 'sex' field has been set, false otherwise.
+      * Checks whether the 'gender' field has been set.
+      * @return True if the 'gender' field has been set, false otherwise.
       */
-    public boolean hasSex() {
+    public boolean hasGender() {
       return fieldSetFlags()[3];
     }
 
 
     /**
-      * Clears the value of the 'sex' field.
+      * Clears the value of the 'gender' field.
       * @return This builder.
       */
-    public io.moyada.serializer.data.avro.User.Builder clearSex() {
-      sex = null;
+    public io.moyada.serializer.data.avro.User.Builder clearGender() {
+      gender = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -624,7 +624,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.age = fieldSetFlags()[2] ? this.age : (java.lang.Integer) defaultValue(fields()[2]);
-        record.sex = fieldSetFlags()[3] ? this.sex : (java.lang.Boolean) defaultValue(fields()[3]);
+        record.gender = fieldSetFlags()[3] ? this.gender : (java.lang.Boolean) defaultValue(fields()[3]);
         record.scope = fieldSetFlags()[4] ? this.scope : (java.lang.Double) defaultValue(fields()[4]);
         record.identifies = fieldSetFlags()[5] ? this.identifies : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[5]);
         record.info = fieldSetFlags()[6] ? this.info : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[6]);

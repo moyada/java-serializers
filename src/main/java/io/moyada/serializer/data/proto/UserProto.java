@@ -39,9 +39,9 @@ public final class UserProto {
     int getAge();
 
     /**
-     * <code>bool sex = 4;</code>
+     * <code>bool gender = 4;</code>
      */
-    boolean getSex();
+    boolean getGender();
 
     /**
      * <code>double scope = 5;</code>
@@ -100,19 +100,6 @@ public final class UserProto {
 
     java.lang.String getInfoOrThrow(
         java.lang.String key);
-
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    boolean hasBirthDay();
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    com.google.protobuf.Timestamp getBirthDay();
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getBirthDayOrBuilder();
   }
   /**
    * Protobuf type {@code io.moyada.serializer.data.proto.User}
@@ -173,7 +160,7 @@ public final class UserProto {
             }
             case 32: {
 
-              sex_ = input.readBool();
+              gender_ = input.readBool();
               break;
             }
             case 41: {
@@ -201,19 +188,6 @@ public final class UserProto {
                   InfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               info_.getMutableMap().put(
                   info__.getKey(), info__.getValue());
-              break;
-            }
-            case 66: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (birthDay_ != null) {
-                subBuilder = birthDay_.toBuilder();
-              }
-              birthDay_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(birthDay_);
-                birthDay_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -316,13 +290,13 @@ public final class UserProto {
       return age_;
     }
 
-    public static final int SEX_FIELD_NUMBER = 4;
-    private boolean sex_;
+    public static final int GENDER_FIELD_NUMBER = 4;
+    private boolean gender_;
     /**
-     * <code>bool sex = 4;</code>
+     * <code>bool gender = 4;</code>
      */
-    public boolean getSex() {
-      return sex_;
+    public boolean getGender() {
+      return gender_;
     }
 
     public static final int SCOPE_FIELD_NUMBER = 5;
@@ -439,27 +413,6 @@ public final class UserProto {
       return map.get(key);
     }
 
-    public static final int BIRTHDAY_FIELD_NUMBER = 8;
-    private com.google.protobuf.Timestamp birthDay_;
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    public boolean hasBirthDay() {
-      return birthDay_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    public com.google.protobuf.Timestamp getBirthDay() {
-      return birthDay_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : birthDay_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getBirthDayOrBuilder() {
-      return getBirthDay();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -483,8 +436,8 @@ public final class UserProto {
       if (age_ != 0) {
         output.writeSFixed32(3, age_);
       }
-      if (sex_ != false) {
-        output.writeBool(4, sex_);
+      if (gender_ != false) {
+        output.writeBool(4, gender_);
       }
       if (scope_ != 0D) {
         output.writeDouble(5, scope_);
@@ -498,9 +451,6 @@ public final class UserProto {
           internalGetInfo(),
           InfoDefaultEntryHolder.defaultEntry,
           7);
-      if (birthDay_ != null) {
-        output.writeMessage(8, getBirthDay());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -521,9 +471,9 @@ public final class UserProto {
         size += com.google.protobuf.CodedOutputStream
           .computeSFixed32Size(3, age_);
       }
-      if (sex_ != false) {
+      if (gender_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, sex_);
+          .computeBoolSize(4, gender_);
       }
       if (scope_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -547,10 +497,6 @@ public final class UserProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(7, info__);
       }
-      if (birthDay_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getBirthDay());
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -572,8 +518,8 @@ public final class UserProto {
           .equals(other.getName())) return false;
       if (getAge()
           != other.getAge()) return false;
-      if (getSex()
-          != other.getSex()) return false;
+      if (getGender()
+          != other.getGender()) return false;
       if (java.lang.Double.doubleToLongBits(getScope())
           != java.lang.Double.doubleToLongBits(
               other.getScope())) return false;
@@ -581,11 +527,6 @@ public final class UserProto {
           .equals(other.getIdentifiesList())) return false;
       if (!internalGetInfo().equals(
           other.internalGetInfo())) return false;
-      if (hasBirthDay() != other.hasBirthDay()) return false;
-      if (hasBirthDay()) {
-        if (!getBirthDay()
-            .equals(other.getBirthDay())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -604,9 +545,9 @@ public final class UserProto {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + AGE_FIELD_NUMBER;
       hash = (53 * hash) + getAge();
-      hash = (37 * hash) + SEX_FIELD_NUMBER;
+      hash = (37 * hash) + GENDER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSex());
+          getGender());
       hash = (37 * hash) + SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getScope()));
@@ -617,10 +558,6 @@ public final class UserProto {
       if (!internalGetInfo().getMap().isEmpty()) {
         hash = (37 * hash) + INFO_FIELD_NUMBER;
         hash = (53 * hash) + internalGetInfo().hashCode();
-      }
-      if (hasBirthDay()) {
-        hash = (37 * hash) + BIRTHDAY_FIELD_NUMBER;
-        hash = (53 * hash) + getBirthDay().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -783,19 +720,13 @@ public final class UserProto {
 
         age_ = 0;
 
-        sex_ = false;
+        gender_ = false;
 
         scope_ = 0D;
 
         identifies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000020);
         internalGetMutableInfo().clear();
-        if (birthDayBuilder_ == null) {
-          birthDay_ = null;
-        } else {
-          birthDay_ = null;
-          birthDayBuilder_ = null;
-        }
         return this;
       }
 
@@ -827,7 +758,7 @@ public final class UserProto {
         result.id_ = id_;
         result.name_ = name_;
         result.age_ = age_;
-        result.sex_ = sex_;
+        result.gender_ = gender_;
         result.scope_ = scope_;
         if (((bitField0_ & 0x00000020) != 0)) {
           identifies_ = identifies_.getUnmodifiableView();
@@ -836,11 +767,6 @@ public final class UserProto {
         result.identifies_ = identifies_;
         result.info_ = internalGetInfo();
         result.info_.makeImmutable();
-        if (birthDayBuilder_ == null) {
-          result.birthDay_ = birthDay_;
-        } else {
-          result.birthDay_ = birthDayBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -900,8 +826,8 @@ public final class UserProto {
         if (other.getAge() != 0) {
           setAge(other.getAge());
         }
-        if (other.getSex() != false) {
-          setSex(other.getSex());
+        if (other.getGender() != false) {
+          setGender(other.getGender());
         }
         if (other.getScope() != 0D) {
           setScope(other.getScope());
@@ -918,9 +844,6 @@ public final class UserProto {
         }
         internalGetMutableInfo().mergeFrom(
             other.internalGetInfo());
-        if (other.hasBirthDay()) {
-          mergeBirthDay(other.getBirthDay());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1072,28 +995,28 @@ public final class UserProto {
         return this;
       }
 
-      private boolean sex_ ;
+      private boolean gender_ ;
       /**
-       * <code>bool sex = 4;</code>
+       * <code>bool gender = 4;</code>
        */
-      public boolean getSex() {
-        return sex_;
+      public boolean getGender() {
+        return gender_;
       }
       /**
-       * <code>bool sex = 4;</code>
+       * <code>bool gender = 4;</code>
        */
-      public Builder setSex(boolean value) {
+      public Builder setGender(boolean value) {
         
-        sex_ = value;
+        gender_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool sex = 4;</code>
+       * <code>bool gender = 4;</code>
        */
-      public Builder clearSex() {
+      public Builder clearGender() {
         
-        sex_ = false;
+        gender_ = false;
         onChanged();
         return this;
       }
@@ -1340,123 +1263,6 @@ public final class UserProto {
             .putAll(values);
         return this;
       }
-
-      private com.google.protobuf.Timestamp birthDay_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> birthDayBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public boolean hasBirthDay() {
-        return birthDayBuilder_ != null || birthDay_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public com.google.protobuf.Timestamp getBirthDay() {
-        if (birthDayBuilder_ == null) {
-          return birthDay_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : birthDay_;
-        } else {
-          return birthDayBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public Builder setBirthDay(com.google.protobuf.Timestamp value) {
-        if (birthDayBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          birthDay_ = value;
-          onChanged();
-        } else {
-          birthDayBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public Builder setBirthDay(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (birthDayBuilder_ == null) {
-          birthDay_ = builderForValue.build();
-          onChanged();
-        } else {
-          birthDayBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public Builder mergeBirthDay(com.google.protobuf.Timestamp value) {
-        if (birthDayBuilder_ == null) {
-          if (birthDay_ != null) {
-            birthDay_ =
-              com.google.protobuf.Timestamp.newBuilder(birthDay_).mergeFrom(value).buildPartial();
-          } else {
-            birthDay_ = value;
-          }
-          onChanged();
-        } else {
-          birthDayBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public Builder clearBirthDay() {
-        if (birthDayBuilder_ == null) {
-          birthDay_ = null;
-          onChanged();
-        } else {
-          birthDay_ = null;
-          birthDayBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getBirthDayBuilder() {
-        
-        onChanged();
-        return getBirthDayFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getBirthDayOrBuilder() {
-        if (birthDayBuilder_ != null) {
-          return birthDayBuilder_.getMessageOrBuilder();
-        } else {
-          return birthDay_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : birthDay_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp birthDay = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getBirthDayFieldBuilder() {
-        if (birthDayBuilder_ == null) {
-          birthDayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getBirthDay(),
-                  getParentForChildren(),
-                  isClean());
-          birthDay_ = null;
-        }
-        return birthDayBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1530,14 +1336,12 @@ public final class UserProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\nuser.proto\022\037io.moyada.serializer.data." +
-      "proto\032\037google/protobuf/timestamp.proto\"\367" +
-      "\001\n\004User\022\n\n\002id\030\001 \001(\004\022\014\n\004name\030\002 \001(\t\022\013\n\003age" +
-      "\030\003 \001(\017\022\013\n\003sex\030\004 \001(\010\022\r\n\005scope\030\005 \001(\001\022\022\n\nid" +
-      "entifies\030\006 \003(\t\022=\n\004info\030\007 \003(\0132/.io.moyada" +
-      ".serializer.data.proto.User.InfoEntry\022,\n" +
-      "\010birthDay\030\010 \001(\0132\032.google.protobuf.Timest" +
-      "amp\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001B\013B\tUserProtob\006proto3"
+      "proto\"\314\001\n\004User\022\n\n\002id\030\001 \001(\004\022\014\n\004name\030\002 \001(\t" +
+      "\022\013\n\003age\030\003 \001(\017\022\016\n\006gender\030\004 \001(\010\022\r\n\005scope\030\005" +
+      " \001(\001\022\022\n\nidentifies\030\006 \003(\t\022=\n\004info\030\007 \003(\0132/" +
+      ".io.moyada.serializer.data.proto.User.In" +
+      "foEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001B\013B\tUserProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1550,21 +1354,19 @@ public final class UserProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_io_moyada_serializer_data_proto_User_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_io_moyada_serializer_data_proto_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_moyada_serializer_data_proto_User_descriptor,
-        new java.lang.String[] { "Id", "Name", "Age", "Sex", "Scope", "Identifies", "Info", "BirthDay", });
+        new java.lang.String[] { "Id", "Name", "Age", "Gender", "Scope", "Identifies", "Info", });
     internal_static_io_moyada_serializer_data_proto_User_InfoEntry_descriptor =
       internal_static_io_moyada_serializer_data_proto_User_descriptor.getNestedTypes().get(0);
     internal_static_io_moyada_serializer_data_proto_User_InfoEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_moyada_serializer_data_proto_User_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -93,7 +93,7 @@ public class DeserAvgt extends AbstractBenchMark {
                 .setId(id)
                 .setName(name)
                 .setAge(age)
-                .setSex(true)
+                .setGender(true)
                 .setScope(ThreadLocalRandom.current().nextDouble())
                 .setIdentifies(Lists.newArrayList("豆腐干", "@moyada", "people", "person", "animal", "test-"))
                 .setInfo(map)
@@ -104,7 +104,7 @@ public class DeserAvgt extends AbstractBenchMark {
                 .setId(id)
                 .setName(name)
                 .setAge(age)
-                .setSex(true)
+                .setGender(true)
                 .setScope(ThreadLocalRandom.current().nextDouble())
                 .addAllIdentifies(Lists.newArrayList("豆腐干", "@moyada", "people", "person", "animal", "test-"))
                 .putAllInfo(getInfo())
@@ -157,7 +157,7 @@ public class DeserAvgt extends AbstractBenchMark {
         user.setId(id);
         user.setName(name);
         user.setAge(age);
-        user.setSex(true);
+        user.setGender(true);
         user.setScope(ThreadLocalRandom.current().nextDouble());
         user.setIdentifies(Lists.newArrayList( "豆腐干", "moyada", "people", "person", "animal", "test"));
         user.setInfo(getInfo());

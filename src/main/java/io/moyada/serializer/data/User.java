@@ -18,7 +18,7 @@ public class User implements Serializable {
     private long id;
     private String name;
     private int age;
-    private boolean sex;
+    private boolean gender;
     private Double scope;
     private List<String> identifies;
     private Map<String, String> info;
